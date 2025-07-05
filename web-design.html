@@ -1,11 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Design Details</title>
-    <link rel="stylesheet" href="styles.css">   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <h1>hi</h1>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Design Details</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      color: #f0f0f0;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+    main {
+      padding: 2rem;
+    }
+    h2 {
+      color: #00ffe0;
+      text-shadow: 0 0 8px #00ffe0;
+    }
+    .project-details p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .portfolio {
+      margin-top: 2rem;
+    }
+    .portfolio-item {
+      position: relative;
+      background: #1e1e2f;
+      padding: 1rem;
+      border: 1px solid #00ffe0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffe0;
+      transition: transform 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00ffe0;
+    }
+    .portfolio-item img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    .portfolio-overlay {
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      background: transparent;
+      color: #0ff;
+      border: 1px solid #0ff;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #0ff;
+      color: #0f0f1a;
+      box-shadow: 0 0 10px #0ff;
+    }
+  </style>
 </head>
+<body>
+
+  <header>
+    <h1>Web Design Project</h1>
+    <h1>UNDER PROGRESS</h1>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <h2>Project Overview</h2>
+      <p>This project showcases various web design elements and techniques.</p>
+    </section>
+
+    <section class="portfolio">
+      <h2>Portfolio Items</h2>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x200/0f0f1a/00ffe0?text=Web+Design" alt="WEB DEV & DESIGN">
+        <div class="portfolio-overlay">
+          <h3>Web Development & Design</h3>
+          <a href="web-design.html" class="btn">View Details</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Web Design Project</p>
+  </footer>
+
+  <script>
+    // Neon glow on click (fun touch)
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.style.boxShadow = '0 0 20px #0ff';
+        setTimeout(() => btn.style.boxShadow = '0 0 10px #0ff', 300);
+      });
+    });
+  </script>
+
+</body>
 </html>
