@@ -9,11 +9,20 @@ AOS.init({
 // Mobile Menu Toggle
 const mobileMenu = document.querySelector('.mobile-menu');
 const nav = document.querySelector('nav');
+const menuIcon = document.getElementById('menu-icon');
 
 mobileMenu.addEventListener('click', () => {
   nav.classList.toggle('active');
-  mobileMenu.classList.toggle('fa-times');
+  menuIcon.classList.toggle('fa-times');
+  menuIcon.classList.toggle('fa-bars');
 });
+
+
+
+
+
+
+
 
 // Close mobile menu when clicking a link
 document.querySelectorAll('nav ul li a').forEach(link => {
