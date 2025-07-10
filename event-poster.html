@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaarathy Varmha | Event Poster Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: #f6f8fa;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #0a2540;
+      color: #fff;
+      padding: 2rem 0 1.2rem 0;
+      box-shadow: 0 2px 8px rgba(10,37,64,0.07);
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(10,37,64,0.07);
+      padding: 2.5rem 2rem 2rem 2rem;
+    }
+
+    h2 {
+      color: #0a2540;
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .poster-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 700px) {
+      .poster-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .poster-item {
+      background: #f0f4fa;
+      border: 1px solid #e3e8ee;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: box-shadow 0.2s, border 0.2s;
+      box-shadow: 0 2px 8px rgba(10,37,64,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      text-align: center;
+    }
+
+    .poster-item:hover {
+      border: 1.5px solid #377dff;
+      box-shadow: 0 6px 24px rgba(55,125,255,0.08);
+    }
+
+    .poster-item img {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+
+    .poster-item h3 {
+      margin: 0;
+      color: #377dff;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #0a2540;
+      color: #b3c7e6;
+      text-align: center;
+      padding: 1.2rem 0;
+      font-size: 0.97rem;
+      margin-top: 3rem;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Event Poster Showcase</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Posters for Events & Promotions</h2>
+      <div class="poster-list">
+        <div class="poster-item">
+          <img src="images/poster1.png" alt="soon" />
+          <h3> to be displayed</h3>
+        </div>
+        <div class="poster-item">
+          <img src="images/poster2.png" alt="soon" />
+          <h3> to be displayed</h3>
+        </div>
+        <!-- Add more poster-item blocks as needed -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 A6 Creations | All Rights Reserved
+  </footer>
+
+</body>
+</html>

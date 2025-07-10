@@ -68,3 +68,25 @@ window.addEventListener('scroll', () => {
     hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
   }
 });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const section = entry.target;
+      section.classList.add('about-visible');
+
+      // ✅ Automatically adds spin-logo to the image
+      const logoImg = section.querySelector('.about-logo img');
+      if (logoImg) {
+        logoImg.classList.add('spin-logo');
+      }
+
+      observer.unobserve(section); // run only once
+    }
+  });
+}, { threshold: 0.3 });
+
+const aboutSection = document.querySelector('.about-section');
+if (aboutSection) {
+  observer.observe(aboutSection);
+}
