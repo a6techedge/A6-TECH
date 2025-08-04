@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 // Initialize AOS animations
 AOS.init({
   duration: 800,
@@ -16,14 +17,6 @@ mobileMenu.addEventListener('click', () => {
   menuIcon.classList.toggle('fa-times');
   menuIcon.classList.toggle('fa-bars');
 });
-
-
-
-
-
-
-
-
 // Close mobile menu when clicking a link
 document.querySelectorAll('nav ul li a').forEach(link => {
   link.addEventListener('click', () => {
@@ -99,3 +92,5 @@ const aboutSection = document.querySelector('.about-section');
 if (aboutSection) {
   observer.observe(aboutSection);
 }
+});
+// End of DOMContentLoaded
