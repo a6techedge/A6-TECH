@@ -49,6 +49,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+
+// ............................................................................
+
+
+// ............................................................................
+
+
 // Order button confirmation
 const orderBtn = document.querySelector('.btn-primary');
 if (orderBtn) {

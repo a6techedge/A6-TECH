@@ -153,7 +153,7 @@ body {
   flex-wrap: wrap;
   gap: 2rem;
 }
-
+/* ............................................................*/
 .about-logo {
   flex: 1 1 300px;
   text-align: center;
@@ -166,6 +166,9 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
+/* ............................................................*/
+
+/* ............................................................*/
 
 .about-content {
   flex: 1 1 500px;
@@ -177,6 +180,7 @@ body {
   transform: translateY(50px);
   transition: all 1s ease-in-out;
 }
+
 
 .about-section.about-visible {
   opacity: 1;
