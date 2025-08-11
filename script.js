@@ -101,5 +101,4 @@ if (aboutSection) {
 }
 });
 
-<script defer src="https://shown.io/metrics/a68pR5B202" type="text/javascript"></script>
 // End of DOMContentLoaded
