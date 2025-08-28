@@ -523,6 +523,7 @@ body.menu-open {
 }
 
 /* --- Mobile: activate checkbox menu --- */
+/*
 @media (max-width: 768px){
   .main-nav{position:fixed;top:72px;right:-100%;width:76%;height:calc(100vh - 72px);background:linear-gradient(180deg,#071018 0%, #0b1220 100%);padding:1.5rem;transition:right .32s ease;z-index:1300;border-left:1px solid rgba(255,255,255,0.02)}
   .main-nav ul{flex-direction:column;gap:1.25rem}
@@ -530,10 +531,10 @@ body.menu-open {
   .nav-toggle:checked ~ .main-nav{right:0}
   .overlay{position:fixed;inset:72px 0 0 0;background:rgba(0,0,0,0.45);display:block;z-index:1250;opacity:0;pointer-events:none;transition:opacity .28s}
   .nav-toggle:checked + .nav-toggle-btn + .main-nav + .overlay{opacity:1;pointer-events:auto}
-  /* hide desktop menu items inside header */
-  .main-nav ul{padding-top:1rem}
-}
-
+*/
+  /* hide desktop menu items inside header *//*  .main-nav ul{padding-top:1rem}
+} 
+*/
 /* Small screens tweaks */
 @media (max-width: 420px){
   .card{width:100%}
