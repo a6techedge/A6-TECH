@@ -6,48 +6,11 @@ AOS.init({
   once: true,
   offset: 100
 });
-
-// Mobile Side Menu Toggle
-const navToggle = document.getElementById('nav-toggle');
-const sideMenu = document.querySelector('.side-menu');
-const overlay = document.querySelector('.overlay');
-const closeBtn = document.querySelector('.close-btn');
-
-// Open menu when checkbox is checked
-navToggle.addEventListener('change', () => {
-  if (navToggle.checked) {
-    sideMenu.classList.add('open');
-    overlay.classList.add('show');
-  } else {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('show');
-  }
-});
-
-// Close menu when clicking the X button
-if (closeBtn) {
-  closeBtn.addEventListener('click', () => {
-    navToggle.checked = false;
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('show');
-  });
-}
-
-// Close menu when clicking the overlay
-if (overlay) {
-  overlay.addEventListener('click', () => {
-    navToggle.checked = false;
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('show');
-  });
-}
-
-// Close menu when a nav link is clicked
-document.querySelectorAll('.main-nav a').forEach(link => {
+// Close sidebar when clicking a nav link
+document.querySelectorAll('.side-menu a').forEach(link => {
   link.addEventListener('click', () => {
-    navToggle.checked = false;
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('show');
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle) navToggle.checked = false;
   });
 });
 
