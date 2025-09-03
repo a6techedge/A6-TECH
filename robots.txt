@@ -1,3 +1,4 @@
 User-agent: *
-Allow:/
-sitemap: https://a6techhub.netlify.app/sitemap.xml
+Allow: /
+
+Sitemap: https://a6tech.online/sitemap.xml
