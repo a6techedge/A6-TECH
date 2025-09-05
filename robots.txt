@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Block unnecessary files (if any exist in your site)
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap location
 Sitemap: https://a6tech.online/sitemap.xml
