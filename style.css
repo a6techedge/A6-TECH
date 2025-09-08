@@ -3,25 +3,37 @@
    Plain CSS, responsive, browser-friendly
    =========================== */
 
-/* --- Variables (easy brand changes) --- */
 :root{
-  --bg: #0f1113;
-  --card-bg: #0b1220;
-  --muted-bg: #f4f7fb;
-  --accent: #7EC8E3;
-  --accent-2: #A3D9B1;
-  --text: #e6eef6;
-  --muted-text:#a9b3bf;
-  --glass: rgba(255,255,255,0.03);
+  /* Core Dark Backgrounds */
+  --bg: #24324c;           /* main background */
+  --card-bg: #566489;      /* cards, portfolio items, sections */
+  --muted-bg: #0b1220;     /* subtle muted backgrounds */
+
+  /* Accent / Interaction */
+  --accent: #7EC8E3;       /* primary buttons, highlights */
+  --accent-2: #A3D9B1;     /* secondary accent */
+  
+  /* Text colors */
+  --text: #e6eef6;         /* main text */
+  --muted-text: #a9b3bf;   /* secondary text / muted */
+
+  /* Glass / overlays */
+  --glass: rgba(36,50,76,0.03);  /* slight transparent layer for overlays */
+
+  /* Layout / UI */
   --radius: 12px;
   --max-width: 1200px;
   --transition: 0.35s cubic-bezier(.2,.9,.2,1);
   --shadow: 0 8px 24px rgba(0,0,0,0.5);
   --btn-radius: 50px;
   --container-pad: 2rem;
+
+  /* Fonts */
   --font-sans: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --font-display: 'Playfair Display', serif;
 }
+
+
 
 /* --- Base --- */
 *{box-sizing:border-box}

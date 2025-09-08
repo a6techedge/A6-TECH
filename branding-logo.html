@@ -1,38 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Branding & Logo Design | A6-Techhub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branding & Logo Design | A6 TechEdge</title>
   <style>
-    body { margin:0; font-family:sans-serif; background:linear-gradient(135deg,#51d0de,#bf4aa8); color:#fff; }
-    header { text-align:center; padding:2rem; }
-    section { max-width:800px; margin:auto; padding:2rem; background:rgba(0,0,0,0.3); border-radius:8px; }
-    .cta { text-align:center; margin-top:2rem; }
-    .cta a { margin:0.5rem; padding:0.8rem 1.2rem; background:#fff; color:#000; text-decoration:none; border-radius:5px; }
+    :root {
+      --primary: #377dff;
+      --dark: #0a2540;
+      --light: #f6f8fa;
+      --text: #222;
+      --muted: #555;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', 'Segoe UI', Arial, sans-serif; background: var(--light); color: var(--text); line-height:1.6; }
+
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(10,37,64,0.1);
+    }
+    header h1 { font-size:2rem; font-weight:700; margin-bottom:0.3rem; }
+    header p { color: #b3c7e6; font-size:1rem; }
+
+    main { max-width: 1000px; margin:2rem auto; padding:0 1rem; }
+    h2 { text-align:center; font-size:1.6rem; font-weight:600; color: var(--dark); margin-bottom:1.5rem; }
+
+    .portfolio-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 700px) {
+      .portfolio-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    .portfolio-item {
+      background: #fff;
+      border: 1px solid #e3e8ee;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(10,37,64,0.07);
+      transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(55,125,255,0.12);
+      border: 1.5px solid var(--primary);
+    }
+    .portfolio-item h3 { margin: 0; color: var(--primary); font-size:1.2rem; font-weight:600; }
+    .portfolio-item p { color: var(--muted); font-size:0.95rem; margin-top:0.5rem; }
+
+    footer {
+      background: var(--dark);
+      color: #b3c7e6;
+      text-align:center;
+      padding:1rem 0;
+      font-size:0.9rem;
+      margin-top:3rem;
+    }
   </style>
 </head>
 <body>
-<header>
-  <h1>Branding & Logo Design</h1>
-  <p>Designs that Speak Your Identity</p>
-</header>
-<section>
-  <h2>About This Service</h2>
-  <p>Your brand is more than just a logo — it’s the story, values, and identity of your business. We create stunning, memorable logos and cohesive branding designs that capture attention and build trust with your audience.</p>
 
-  <h2>Our Expertise</h2>
-  <ul>
-    <li>Unique and professional logo design</li>
-    <li>Brand identity and guidelines</li>
-    <li>Business cards, letterheads, and stationery</li>
-    <li>Custom graphics for digital and print media</li>
-  </ul>
+  <header>
+    <h1>Branding & Logo Design</h1>
+    <p>Designs that Speak Your Identity</p>
+  </header>
 
-  <div class="cta">
-    <a href="https://forms.gle/sELcgsRZMGLSTMRo6" target="_self">Order Now</a>
-    <a href="https://whatsapp.com/channel/0029VbAsKVW7T8bd8nPh7a0A" target="_self">Join WhatsApp</a>
-  </div>
-</section>
+  <main>
+    <section>
+      <h2>Our Expertise</h2>
+      <div class="portfolio-list">
+        <div class="portfolio-item">
+          <h3>Logo Design</h3>
+          <p>Creating unique and professional logos that capture your brand essence.</p>
+        </div>
+        <div class="portfolio-item">
+          <h3>Brand Identity & Guidelines</h3>
+          <p>Establish a cohesive visual language for your brand with clear guidelines.</p>
+        </div>
+        <div class="portfolio-item">
+          <h3>Business Cards & Stationery</h3>
+          <p>Design business cards, letterheads, and other stationery that leave a lasting impression.</p>
+        </div>
+        <div class="portfolio-item">
+          <h3>Custom Graphics</h3>
+          <p>Creative graphics for digital and print media that elevate your brand image.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 A6 TechEdge Creations | All Rights Reserved
+  </footer>
+
+  <script>
+    // Hover effect for portfolio titles
+    document.querySelectorAll('.portfolio-item h3').forEach(title => {
+      title.addEventListener('mouseover', () => title.style.color = "#174ea6");
+      title.addEventListener('mouseout', () => title.style.color = "var(--primary)");
+    });
+  </script>
+
 </body>
 </html>
