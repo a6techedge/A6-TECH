@@ -7,24 +7,24 @@
   /* Core Dark Backgrounds */
   --bg: #24324c;           /* main background */
   --card-bg: #566489;      /* cards, portfolio items, sections */
-  --muted-bg: #0b1220;     /* subtle muted backgrounds */
+  --muted-bg: #1a2238;     /* deeper muted tone */
 
   /* Accent / Interaction */
-  --accent: #7EC8E3;       /* primary buttons, highlights */
-  --accent-2: #A3D9B1;     /* secondary accent */
+  --accent: #6f9ad7;       /* premium tech blue */
+  --accent-2: #9fb4d9;     /* lighter secondary blue */
   
   /* Text colors */
-  --text: #e6eef6;         /* main text */
-  --muted-text: #a9b3bf;   /* secondary text / muted */
+  --text: #f1f4fa;         /* main text */
+  --muted-text: #b8c0ce;   /* secondary text */
 
   /* Glass / overlays */
-  --glass: rgba(36,50,76,0.03);  /* slight transparent layer for overlays */
+  --glass: rgba(86,100,137,0.15);  /* subtle glass tint from card-bg */
 
   /* Layout / UI */
   --radius: 12px;
   --max-width: 1200px;
   --transition: 0.35s cubic-bezier(.2,.9,.2,1);
-  --shadow: 0 8px 24px rgba(0,0,0,0.5);
+  --shadow: 0 8px 24px rgba(0,0,0,0.55);
   --btn-radius: 50px;
   --container-pad: 2rem;
 
@@ -32,8 +32,6 @@
   --font-sans: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --font-display: 'Playfair Display', serif;
 }
-
-
 
 /* --- Base --- */
 *{box-sizing:border-box}
@@ -45,7 +43,7 @@ body{
   margin:0;
   font-family:var(--font-sans);
   color:var(--text);
-  background: linear-gradient(180deg,#0b0d10 0%, #111214 100%);
+  background: var(--bg);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.6;
@@ -61,7 +59,7 @@ body{
   padding:0.65rem 1.25rem;
   border-radius:var(--btn-radius);
   background:var(--accent);
-  color:#071017;
+  color:#0e1625;
   font-weight:600;
   letter-spacing:0.02em;
   text-decoration:none;
@@ -70,13 +68,8 @@ body{
 
 .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .btn-hero{background:rgba(255,255,255,0.9);color:#071017}
-.btn-primary{background:#62B6CB;color:#071017}
+.btn-primary{background:var(--accent);color:#0e1625}
 .btn-small{padding:0.5rem 0.9rem;font-size:0.95rem}
-
-:root {
-  --accent: #7EC8E3;
-  --text: #fff;
-}
 
 /* Remove old header styles completely */
 .site-header,
@@ -93,15 +86,7 @@ body{
   z-index: 2000;
 }
 
-/* menu slide designs starts  */
-/* Menu Toggle Checkbox */
-:root {
-  --text: #fff;
-  --accent: #ffcc33;
-  --bg-blur: rgba(17,20,32,0.38);
-}
-
-/* Hide checkbox */
+/* --- Menu Slide --- */
 .nav-toggle { display: none; }
 
 .menu-btn {
@@ -129,14 +114,13 @@ body{
   top: 1rem;
   right: 1rem;
   background: var(--accent);
-  color: #071017;
+  color: #0e1625;
   padding: 0.5rem 1.1rem;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
   z-index: 2000;
 }
-
 .order-btn:hover { opacity: 0.87; }
 
 /* Side Menu */
@@ -148,7 +132,7 @@ body{
   min-width: 220px;
   max-width: 400px;
   height: 100vh;
-  background: var(--bg-blur);
+  background: rgba(36,50,76,0.88);
   backdrop-filter: blur(16px);
   box-sizing: border-box;
   transition: left 0.35s cubic-bezier(.49,1.69,.45,.75);
@@ -156,33 +140,28 @@ body{
   padding: 4rem 1.6rem 2rem 1.6rem;
   overflow-y: auto;
 }
-
-/* Show sidebar when checked */
 .nav-toggle:checked ~ .side-menu { left: 0; }
 
-/* Close "X" Button */
 .close-btn {
   position: absolute;
   top: 1.5rem;
   right: 2rem;
   font-size: 2.2rem;
-  color: #fff;
+  color: var(--text);
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 1600;
   transition: color 0.25s;
 }
-
 .close-btn:hover { color: var(--accent); }
 
-/* Overlay styling, always covers full viewport */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.24);
+  background: rgba(10, 10, 10, 0.32);
   backdrop-filter: blur(3px);
   opacity: 0;
   pointer-events: none;
@@ -194,7 +173,6 @@ body{
   pointer-events: auto;
 }
 
-/* Menu text spacing */
 .main-nav ul { margin: 0; padding: 0; list-style: none; }
 .main-nav li { margin-bottom: 1.25rem; }
 .main-nav a {
@@ -220,13 +198,10 @@ body{
   .close-btn { right: 0.7rem; top: 0.7rem; font-size: 1.55rem; }
 }
 
-/* Prevent main content from scrolling when menu is open (optional) */
+body.menu-open { overflow: hidden; }
 
-body.menu-open {
-  overflow: hidden; /* prevents background scroll */
-}
-
-
+/* --- The rest of your sections (hero, cards, services, portfolio, footer, etc.) remain unchanged --- */
+/* They will now automatically pick up the corrected theme colors */
 
 /* --- menu slide designs end */
 
@@ -535,7 +510,7 @@ body.menu-open {
 }
 
 /* --- Mobile: activate checkbox menu --- */
-/*
+
 @media (max-width: 768px){
   .main-nav{position:fixed;top:72px;right:-100%;width:76%;height:calc(100vh - 72px);background:linear-gradient(180deg,#071018 0%, #0b1220 100%);padding:1.5rem;transition:right .32s ease;z-index:1300;border-left:1px solid rgba(255,255,255,0.02)}
   .main-nav ul{flex-direction:column;gap:1.25rem}
@@ -543,10 +518,10 @@ body.menu-open {
   .nav-toggle:checked ~ .main-nav{right:0}
   .overlay{position:fixed;inset:72px 0 0 0;background:rgba(0,0,0,0.45);display:block;z-index:1250;opacity:0;pointer-events:none;transition:opacity .28s}
   .nav-toggle:checked + .nav-toggle-btn + .main-nav + .overlay{opacity:1;pointer-events:auto}
-*/
-  /* hide desktop menu items inside header *//*  .main-nav ul{padding-top:1rem}
+
+  /* hide desktop menu items inside header *//*  .main-nav ul{padding-top:1rem} */
 } 
-*/
+
 /* Small screens tweaks */
 @media (max-width: 420px){
   .card{width:100%}
