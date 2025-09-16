@@ -91,3 +91,32 @@ if (aboutSection) {
 });
 
 // End of DOMContentLoaded
+
+
+
+// bottom to top arrow
+
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopBtn = document.querySelector(".back-to-top");
+
+  // Show button after scrolling 200px
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  // Scroll to top when clicked
+  backToTopBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
+
+

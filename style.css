@@ -127,20 +127,22 @@ body{
 .side-menu {
   position: fixed;
   top: 0;
-  left: -45vw;
-  width: 45vw;
-  min-width: 220px;
-  max-width: 400px;
+  left: -100%; /* fully hidden */
+  width: 85vw; /* always relative to screen width */
+  max-width: 320px; /* cap size for larger screens */
   height: 100vh;
-  background: rgba(36,50,76,0.88);
-  backdrop-filter: blur(16px);
-  box-sizing: border-box;
+   background: rgba(36, 50, 76, 0.55); 
+  backdrop-filter: blur(10px);
   transition: left 0.35s cubic-bezier(.49,1.69,.45,.75);
   z-index: 1500;
-  padding: 4rem 1.6rem 2rem 1.6rem;
+  padding: 3rem 1.5rem 2rem 1.5rem; /* reduced padding */
   overflow-y: auto;
+  overflow-x: hidden; /* 🔥 stops horizontal scroll */
 }
-.nav-toggle:checked ~ .side-menu { left: 0; }
+/* when checked, slide in */
+.nav-toggle:checked ~ .side-menu {
+  left: 0;
+}
 
 .close-btn {
   position: absolute;
@@ -187,18 +189,20 @@ body{
 
 /* Responsive widths */
 @media (max-width: 900px) {
-  .side-menu { width: 60vw; left: -60vw; }
+  .side-menu { width: 60vw; left: -60vw; max-width: 320px; }
 }
 @media (max-width: 700px) {
-  .side-menu { width: 75vw; left: -75vw; min-width: 160px; padding-top: 3rem; }
+  .side-menu { width: 75vw; left: -75vw; max-width: 300px; padding-top: 3rem; min-width: unset; }
   .close-btn { right: 1rem; top: 0.9rem; font-size: 2rem; }
 }
 @media (max-width: 480px) {
-  .side-menu { width: 85vw; left: -85vw; padding-top: 2.5rem; }
+  .side-menu { width: 100vw; left: -100vw; max-width: none; padding: 2.5rem 1rem; }
   .close-btn { right: 0.7rem; top: 0.7rem; font-size: 1.55rem; }
 }
 
-body.menu-open { overflow: hidden; }
+/* 🔥 extra safeguard */
+.side-menu { overflow-x: hidden; }
+
 
 /* --- The rest of your sections (hero, cards, services, portfolio, footer, etc.) remain unchanged --- */
 /* They will now automatically pick up the corrected theme colors */
@@ -532,6 +536,39 @@ body.menu-open { overflow: hidden; }
 /* small performance/fallback tweaks */
 video{background:#000;display:block}
 img{display:block}
+
+
+/*BACK TO TOP*/
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: #24324c;         /* button background */
+  color: #fff;                 /* icon color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;                  /* hidden by default */
+  pointer-events: none;        /* can’t click when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #1a2234;
+}
 
 
 
